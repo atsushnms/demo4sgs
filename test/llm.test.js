@@ -70,7 +70,9 @@ test('evaluatePrompt calls GitHub Models and returns normalized result', async (
     const body = JSON.parse(captured.opts.body);
     assert.ok(body.model);
     assert.ok(Array.isArray(body.messages));
-    assert.strictEqual(captured.opts.headers.Authorization.split(' ')[0], 'Bearer');
+    const auth = captured.opts.headers.Authorization;
+    assert.strictEqual(typeof auth, 'string', 'Authorization header should be a string');
+    assert.strictEqual(auth.split(' ')[0], 'Bearer', 'Authorization header should start with the auth scheme');
   } finally {
     global.fetch = originalFetch;
   }

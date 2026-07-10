@@ -48,6 +48,17 @@ test('completedQuests keeps the best score per quest', () => {
   assert.strictEqual(p.completedQuests[sampleChallenge.id], 70);
 });
 
+test('xp is only awarded for improvement over previous best', () => {
+  const p = game.getOrCreate('test-player-6');
+  const first = game.recordAttempt(p, sampleChallenge, 60);
+  const better = game.recordAttempt(p, sampleChallenge, 85);
+  const worse = game.recordAttempt(p, sampleChallenge, 50);
+  assert.strictEqual(first.xpEarned, 60);
+  assert.strictEqual(better.xpEarned, 25); // 85 - 60
+  assert.strictEqual(worse.xpEarned, 0); // no improvement
+  assert.strictEqual(p.xp, 85); // equals best score
+});
+
 test('ranking is sorted by xp descending', () => {
   const board = game.ranking(50);
   for (let i = 1; i < board.length; i += 1) {

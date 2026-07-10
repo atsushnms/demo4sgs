@@ -54,23 +54,25 @@ function evaluateBadges(player) {
 }
 
 /**
- * Record an attempt. `xpEarned` is derived from the score (0-100).
- * A quest only awards XP for improvement over the player's previous best,
- * to discourage grinding the same quest, but always logs the attempt.
+ * Record an attempt. XP is awarded only for improvement over the player's
+ * previous best score on that quest (so `xpEarned` equals how many points the
+ * best score went up). This discourages grinding the same quest, while every
+ * attempt is still logged in the history.
  */
 function recordAttempt(player, challenge, score) {
-  const xpEarned = Math.round(score);
+  const roundedScore = Math.round(score);
   const prevBest = player.completedQuests[challenge.id] || 0;
+  const xpEarned = Math.max(0, roundedScore - prevBest);
 
   player.xp += xpEarned;
-  if (score > prevBest) {
-    player.completedQuests[challenge.id] = Math.round(score);
+  if (roundedScore > prevBest) {
+    player.completedQuests[challenge.id] = roundedScore;
   }
   player.categories[challenge.category] =
     (player.categories[challenge.category] || 0) + 1;
   player.history.unshift({
     questId: challenge.id,
-    score: Math.round(score),
+    score: roundedScore,
     xp: xpEarned,
     at: new Date().toISOString()
   });
