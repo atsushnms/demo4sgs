@@ -1,0 +1,12 @@
+<%- include('partials/head', { pageTitle: String(status) }) %>
+<%- include('partials/header') %>
+
+<main class="container">
+  <div class="error-state">
+    <h1 class="error-code"><%= status %></h1>
+    <p class="error-msg"><%= message %></p>
+    <a class="btn btn-primary" href="/?lang=<%= locale %>"><%= t('nav.home') %></a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

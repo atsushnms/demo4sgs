@@ -1,0 +1,12 @@
+<a class="quest-card diff-<%= c.difficulty %>" href="/quests/<%= c.id %>?lang=<%= locale %>">
+  <div class="quest-card-top">
+    <span class="pill pill-<%= c.difficulty %>"><%= t('difficulty.' + c.difficulty) %></span>
+    <span class="quest-cat"><%= c.category %></span>
+  </div>
+  <h3 class="quest-card-title"><%= c.title %></h3>
+  <p class="quest-card-goal"><%= c.goal %></p>
+  <div class="quest-card-foot">
+    <span class="quest-max">★ <%= c.maxScore %> <%= t('common.xp') %></span>
+    <span class="quest-go"><%= t('common.start') %> →</span>
+  </div>
+</a>

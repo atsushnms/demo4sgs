@@ -1,0 +1,41 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/?lang=<%= locale %>">
+      <span class="brand-mark">◆</span>
+      <span class="brand-name"><%= t('site.name') %></span>
+    </a>
+
+    <button class="nav-toggle" aria-label="menu" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" data-nav>
+      <a href="/?lang=<%= locale %>" class="<%= page === 'home' ? 'active' : '' %>"><%= t('nav.home') %></a>
+      <a href="/quests?lang=<%= locale %>" class="<%= page === 'quests' ? 'active' : '' %>"><%= t('nav.quests') %></a>
+      <a href="/ranking?lang=<%= locale %>" class="<%= page === 'ranking' ? 'active' : '' %>"><%= t('nav.ranking') %></a>
+      <a href="/mypage?lang=<%= locale %>" class="<%= page === 'mypage' ? 'active' : '' %>"><%= t('nav.mypage') %></a>
+
+      <div class="lang-switch" role="group" aria-label="<%= t('nav.language') %>">
+        <% locales.forEach(function(lc){ %>
+          <a class="lang-btn <%= lc === locale ? 'active' : '' %>"
+             href="<%= currentPath %>?lang=<%= lc %>"><%= lc.toUpperCase() %></a>
+        <% }) %>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="hud container" aria-label="player status">
+  <div class="hud-item">
+    <span class="hud-label"><%= t('common.level') %></span>
+    <span class="hud-value"><%= profile.level %></span>
+  </div>
+  <div class="hud-xpbar" title="<%= profile.xpIntoLevel %> / <%= profile.xpForNextLevel %> XP">
+    <div class="hud-xpbar-fill" style="width: <%= Math.round(profile.xpIntoLevel / profile.xpForNextLevel * 100) %>%"></div>
+    <span class="hud-xptext"><%= profile.xp %> <%= t('common.xp') %></span>
+  </div>
+  <div class="hud-item">
+    <span class="hud-label"><%= t('common.badges') %></span>
+    <span class="hud-value"><%= profile.badges.length %></span>
+  </div>
+</div>
