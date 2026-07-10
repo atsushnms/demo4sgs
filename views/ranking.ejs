@@ -1,0 +1,30 @@
+<%- include('partials/head', { pageTitle: t('ranking.title') }) %>
+<%- include('partials/header') %>
+
+<main class="container">
+  <div class="page-head">
+    <h1 class="page-title">🏆 <%= t('ranking.title') %></h1>
+    <p class="page-sub"><%= t('ranking.subtitle') %></p>
+  </div>
+
+  <% if (!ranking.length) { %>
+    <p class="empty-state"><%= t('ranking.empty') %></p>
+  <% } else { %>
+    <ol class="rank-list">
+      <% ranking.forEach(function(r, i){ %>
+        <li class="rank-row <%= r.id === profile.id ? 'is-you' : '' %> <%= i < 3 ? 'top-' + (i+1) : '' %>">
+          <span class="rank-pos"><%= i + 1 %></span>
+          <span class="rank-name">
+            <%= r.name %>
+            <% if (r.id === profile.id) { %><span class="you-tag"><%= t('common.you') %></span><% } %>
+          </span>
+          <span class="rank-lv"><%= t('common.level') %> <%= r.level %></span>
+          <span class="rank-badges">🏅 <%= r.badges %></span>
+          <span class="rank-xp"><%= r.xp %> <%= t('common.xp') %></span>
+        </li>
+      <% }) %>
+    </ol>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %>

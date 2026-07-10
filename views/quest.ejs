@@ -1,0 +1,88 @@
+<%- include('partials/head', { pageTitle: challenge.title }) %>
+<%- include('partials/header') %>
+
+<main class="container quest-detail" data-quest-id="<%= challenge.id %>">
+  <a class="back-link" href="/quests?lang=<%= locale %>">← <%= t('common.back') %></a>
+
+  <div class="quest-head">
+    <span class="pill pill-<%= challenge.difficulty %>"><%= t('difficulty.' + challenge.difficulty) %></span>
+    <span class="quest-cat"><%= challenge.category %></span>
+    <span class="quest-max">★ <%= challenge.maxScore %> <%= t('common.xp') %></span>
+  </div>
+  <h1 class="quest-title"><%= challenge.title %></h1>
+
+  <div class="quest-body">
+    <section class="quest-block">
+      <h2 class="block-label"><%= t('quest.scenario') %></h2>
+      <p><%= challenge.scenario %></p>
+    </section>
+    <section class="quest-block quest-goal">
+      <h2 class="block-label"><%= t('quest.goal') %></h2>
+      <p><%= challenge.goal %></p>
+    </section>
+    <% if (challenge.tips && challenge.tips.length) { %>
+    <section class="quest-block quest-tips">
+      <h2 class="block-label">💡 <%= t('quest.tips') %></h2>
+      <ul>
+        <% challenge.tips.forEach(function(tip){ %><li><%= tip %></li><% }) %>
+      </ul>
+    </section>
+    <% } %>
+  </div>
+
+  <form class="prompt-form" data-prompt-form>
+    <label class="prompt-label" for="prompt"><%= t('common.yourPrompt') %></label>
+    <textarea id="prompt" name="prompt" class="prompt-input" rows="6"
+      placeholder="<%= t('quest.promptPlaceholder') %>"></textarea>
+    <div class="prompt-actions">
+      <button type="submit" class="btn btn-primary" data-submit-btn>
+        <%= t('common.submit') %>
+      </button>
+      <span class="spinner" data-spinner hidden>
+        <span class="spinner-dot"></span><%= t('common.loading') %>
+      </span>
+    </div>
+    <p class="form-error" data-form-error hidden></p>
+  </form>
+
+  <section class="result" data-result hidden>
+    <div class="result-header">
+      <h2 class="block-label"><%= t('quest.resultTitle') %></h2>
+      <div class="score-ring" data-score-ring>
+        <span class="score-num" data-score>0</span>
+        <span class="score-max">/ <%= challenge.maxScore %></span>
+      </div>
+    </div>
+
+    <div class="result-xp" data-xp-line hidden>
+      <span class="xp-badge">+<span data-earned-xp>0</span> <%= t('quest.earnedXp') %></span>
+    </div>
+
+    <div class="result-feedback">
+      <p data-feedback></p>
+    </div>
+
+    <div class="result-cols">
+      <div class="result-col result-strengths">
+        <h3>👍 <%= t('quest.strengths') %></h3>
+        <ul data-strengths></ul>
+      </div>
+      <div class="result-col result-improvements">
+        <h3>🔧 <%= t('quest.improvements') %></h3>
+        <ul data-improvements></ul>
+      </div>
+    </div>
+
+    <div class="result-foot">
+      <button class="btn btn-ghost" data-try-again><%= t('quest.tryAgain') %></button>
+      <a class="btn btn-secondary" href="/quests?lang=<%= locale %>"><%= t('quest.nextQuest') %> →</a>
+    </div>
+  </section>
+</main>
+
+<div class="i18n-strings"
+     data-str-empty="<%= t('quest.emptyPrompt') %>"
+     data-str-error="<%= t('quest.evaluationError') %>"
+     data-lang="<%= locale %>" hidden></div>
+
+<%- include('partials/footer') %>

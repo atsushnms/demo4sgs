@@ -1,0 +1,112 @@
+{
+  "challenges": [
+    {
+      "id": "log-summary",
+      "category": "summarization",
+      "difficulty": "beginner",
+      "maxScore": 100,
+      "ja": {
+        "title": "ログ要約クエスト",
+        "scenario": "本番サーバーのエラーログが数百行出力されています。オンコール担当者がひと目で状況を把握できるようにしたいです。",
+        "goal": "エラーログを要約し、原因の候補と対応の優先度を短くまとめるプロンプトを作成する。",
+        "tips": ["出力フォーマット（箇条書き・表など）を指定しましょう", "要約の観点（原因・影響・対応）を明示しましょう"]
+      },
+      "en": {
+        "title": "Log Summary Quest",
+        "scenario": "A production server has emitted hundreds of lines of error logs. The on-call engineer needs to grasp the situation at a glance.",
+        "goal": "Write a prompt that summarizes the error logs and lists likely causes with a response priority.",
+        "tips": ["Specify the output format (bullets, table, etc.)", "Make the summary dimensions explicit (cause, impact, action)"]
+      }
+    },
+    {
+      "id": "requirement-organize",
+      "category": "analysis",
+      "difficulty": "intermediate",
+      "maxScore": 100,
+      "ja": {
+        "title": "要件整理クエスト",
+        "scenario": "クライアントから届いた、まとまりのない機能要望メールがあります。開発チームが着手できる形に整理する必要があります。",
+        "goal": "曖昧な要望を、機能要件・非機能要件・不明点に分類して整理するプロンプトを作成する。",
+        "tips": ["役割（ロール）を設定すると精度が上がります", "不明点を洗い出させると手戻りを減らせます"]
+      },
+      "en": {
+        "title": "Requirement Organizer Quest",
+        "scenario": "You received a disorganized feature-request email from a client. It must be shaped into something the dev team can act on.",
+        "goal": "Write a prompt that sorts vague requests into functional requirements, non-functional requirements, and open questions.",
+        "tips": ["Setting a role improves accuracy", "Ask it to surface open questions to reduce rework"]
+      }
+    },
+    {
+      "id": "code-review",
+      "category": "coding",
+      "difficulty": "intermediate",
+      "maxScore": 100,
+      "ja": {
+        "title": "コードレビュークエスト",
+        "scenario": "同僚が書いた JavaScript の関数をレビューすることになりました。バグ・可読性・パフォーマンスの観点で確認したいです。",
+        "goal": "コードのバグ・可読性・パフォーマンスを指摘し、改善案を提示させるプロンプトを作成する。",
+        "tips": ["観点を明確に列挙しましょう", "重大度（severity）付きで出力させると優先度が分かります"]
+      },
+      "en": {
+        "title": "Code Review Quest",
+        "scenario": "You must review a JavaScript function written by a teammate, checking for bugs, readability, and performance.",
+        "goal": "Write a prompt that flags bugs, readability, and performance issues and proposes fixes.",
+        "tips": ["List the review dimensions explicitly", "Ask for a severity label to reveal priority"]
+      }
+    },
+    {
+      "id": "user-story",
+      "category": "writing",
+      "difficulty": "beginner",
+      "maxScore": 100,
+      "ja": {
+        "title": "ユーザーストーリー作成クエスト",
+        "scenario": "新しい通知機能について、アジャイル開発で使うユーザーストーリーを書く必要があります。",
+        "goal": "『〜として、〜したい、なぜなら〜』の形式で、受け入れ基準付きのユーザーストーリーを生成するプロンプトを作成する。",
+        "tips": ["フォーマットの型を明示しましょう", "受け入れ基準の数を指定すると安定します"]
+      },
+      "en": {
+        "title": "User Story Quest",
+        "scenario": "You need to write an agile user story for a new notification feature.",
+        "goal": "Write a prompt that produces a user story in the 'As a…, I want…, so that…' format with acceptance criteria.",
+        "tips": ["State the exact format", "Specify the number of acceptance criteria for consistency"]
+      }
+    },
+    {
+      "id": "sql-generation",
+      "category": "coding",
+      "difficulty": "advanced",
+      "maxScore": 100,
+      "ja": {
+        "title": "SQL生成クエスト",
+        "scenario": "『月ごとの売上上位5製品を出したい』という自然言語のリクエストを、正確な SQL に変換したいです。",
+        "goal": "テーブル定義を踏まえ、安全で正確な SQL を生成させるプロンプトを作成する（前提や曖昧さの確認も含む）。",
+        "tips": ["スキーマ情報を渡す前提を組み込みましょう", "曖昧な場合は仮定を明示させましょう"]
+      },
+      "en": {
+        "title": "SQL Generation Quest",
+        "scenario": "You want to turn the natural-language request 'show the top 5 products by monthly sales' into precise SQL.",
+        "goal": "Write a prompt that produces safe, correct SQL given a schema, including confirming assumptions and ambiguity.",
+        "tips": ["Build in passing the schema", "Have it state assumptions when ambiguous"]
+      }
+    },
+    {
+      "id": "incident-postmortem",
+      "category": "analysis",
+      "difficulty": "advanced",
+      "maxScore": 100,
+      "ja": {
+        "title": "障害ポストモーテムクエスト",
+        "scenario": "重大なサービス障害が発生しました。再発防止のためのポストモーテム（振り返り）資料を作成する必要があります。",
+        "goal": "タイムライン・根本原因・影響・再発防止策を含むポストモーテムを、非難のないトーンで生成するプロンプトを作成する。",
+        "tips": ["トーン（blameless）を指定しましょう", "必要なセクション構成を列挙しましょう"]
+      },
+      "en": {
+        "title": "Incident Postmortem Quest",
+        "scenario": "A major service outage occurred. You must produce a postmortem document to prevent recurrence.",
+        "goal": "Write a prompt that generates a blameless postmortem including timeline, root cause, impact, and prevention.",
+        "tips": ["Specify a blameless tone", "List the required sections"]
+      }
+    }
+  ]
+}

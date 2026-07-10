@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "code": "ja",
+    "name": "日本語",
+    "htmlLang": "ja"
+  },
+  "site": {
+    "name": "PromptQuest",
+    "tagline": "遊んで極める、プロンプトの技",
+    "description": "ゲーム形式で生成AIのプロンプトスキルを楽しく鍛える学習プラットフォーム"
+  },
+  "nav": {
+    "home": "ホーム",
+    "quests": "クエスト",
+    "ranking": "ランキング",
+    "mypage": "マイページ",
+    "language": "言語"
+  },
+  "common": {
+    "level": "レベル",
+    "xp": "XP",
+    "points": "ポイント",
+    "score": "スコア",
+    "difficulty": "難易度",
+    "category": "カテゴリー",
+    "start": "挑戦する",
+    "back": "戻る",
+    "submit": "プロンプトを評価する",
+    "loading": "AIが評価中です…",
+    "yourPrompt": "あなたのプロンプト",
+    "close": "閉じる",
+    "badges": "バッジ",
+    "rank": "順位",
+    "player": "プレイヤー",
+    "you": "あなた",
+    "total": "合計"
+  },
+  "difficulty": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  },
+  "home": {
+    "heroTitle": "プロンプトの達人になろう",
+    "heroSubtitle": "クエストをクリアして XP を稼ぎ、AI があなたのプロンプトを即座に採点。楽しみながら生成AIスキルを磨けます。",
+    "heroCta": "クエストを始める",
+    "howTitle": "遊び方",
+    "step1Title": "クエストを選ぶ",
+    "step1Body": "初級から上級まで、実務に近いお題に挑戦します。",
+    "step2Title": "プロンプトを書く",
+    "step2Body": "お題を解決する最高のプロンプトを考えて入力します。",
+    "step3Title": "AIが即採点",
+    "step3Body": "GitHub Models があなたのプロンプトを評価し、改善点を提示します。",
+    "step4Title": "XP と バッジを獲得",
+    "step4Body": "スコアに応じて XP が貯まり、レベルアップとバッジ獲得を目指します。",
+    "featuredQuests": "注目のクエスト"
+  },
+  "quests": {
+    "title": "クエスト一覧",
+    "subtitle": "挑戦したいクエストを選びましょう。",
+    "goal": "ゴール",
+    "maxScore": "満点"
+  },
+  "quest": {
+    "scenario": "シナリオ",
+    "goal": "ゴール",
+    "tips": "ヒント",
+    "promptPlaceholder": "ここに、お題を解決するためのプロンプトを入力してください…",
+    "resultTitle": "評価結果",
+    "feedback": "フィードバック",
+    "strengths": "良い点",
+    "improvements": "改善点",
+    "earnedXp": "獲得XP",
+    "tryAgain": "もう一度挑戦",
+    "nextQuest": "次のクエストへ",
+    "emptyPrompt": "プロンプトを入力してください。",
+    "evaluationError": "評価中にエラーが発生しました。時間をおいて再度お試しください。"
+  },
+  "ranking": {
+    "title": "ランキング",
+    "subtitle": "トッププロンプトマスターたち。あなたも上位を目指しましょう！",
+    "empty": "まだ記録がありません。クエストに挑戦して名前を刻もう！"
+  },
+  "mypage": {
+    "title": "マイページ",
+    "subtitle": "あなたの成長の記録です。",
+    "nextLevel": "次のレベルまで",
+    "completedQuests": "クリアしたクエスト",
+    "noBadges": "まだバッジがありません。クエストをクリアして獲得しましょう！",
+    "noHistory": "まだ挑戦履歴がありません。",
+    "history": "挑戦履歴"
+  },
+  "badges": {
+    "first_quest": { "name": "はじめの一歩", "desc": "最初のクエストをクリアした" },
+    "high_scorer": { "name": "高得点ハンター", "desc": "90点以上を獲得した" },
+    "level_5": { "name": "熟練プロンプター", "desc": "レベル5に到達した" },
+    "explorer": { "name": "探求者", "desc": "3つの異なるカテゴリーに挑戦した" }
+  },
+  "footer": {
+    "note": "これはプロトタイプ版です。ユーザー認証はありません。",
+    "poweredBy": "Powered by GitHub Models"
+  }
+}

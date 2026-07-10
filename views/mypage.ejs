@@ -1,0 +1,64 @@
+<%- include('partials/head', { pageTitle: t('mypage.title') }) %>
+<%- include('partials/header') %>
+
+<main class="container">
+  <div class="page-head">
+    <h1 class="page-title"><%= t('mypage.title') %></h1>
+    <p class="page-sub"><%= t('mypage.subtitle') %></p>
+  </div>
+
+  <section class="profile-grid">
+    <div class="stat-card">
+      <span class="stat-label"><%= t('common.level') %></span>
+      <span class="stat-big"><%= profile.level %></span>
+      <div class="stat-xpbar">
+        <div class="stat-xpbar-fill" style="width: <%= Math.round(profile.xpIntoLevel / profile.xpForNextLevel * 100) %>%"></div>
+      </div>
+      <span class="stat-sub"><%= t('mypage.nextLevel') %>: <%= profile.xpForNextLevel - profile.xpIntoLevel %> <%= t('common.xp') %></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label"><%= t('common.xp') %> (<%= t('common.total') %>)</span>
+      <span class="stat-big"><%= profile.xp %></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label"><%= t('mypage.completedQuests') %></span>
+      <span class="stat-big"><%= profile.completedCount %></span>
+    </div>
+  </section>
+
+  <section class="mp-section">
+    <h2 class="section-title"><%= t('common.badges') %></h2>
+    <% if (!profile.badges.length) { %>
+      <p class="empty-state"><%= t('mypage.noBadges') %></p>
+    <% } else { %>
+      <div class="badge-grid">
+        <% profile.badges.forEach(function(b){ %>
+          <div class="badge-item">
+            <span class="badge-emoji">🏅</span>
+            <span class="badge-name"><%= t('badges.' + b + '.name') %></span>
+            <span class="badge-desc"><%= t('badges.' + b + '.desc') %></span>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </section>
+
+  <section class="mp-section">
+    <h2 class="section-title"><%= t('mypage.history') %></h2>
+    <% if (!historyView.length) { %>
+      <p class="empty-state"><%= t('mypage.noHistory') %></p>
+    <% } else { %>
+      <ul class="history-list">
+        <% historyView.forEach(function(h){ %>
+          <li class="history-row">
+            <span class="history-quest"><%= h.quest ? h.quest.title : h.questId %></span>
+            <span class="history-score">⭐ <%= h.score %></span>
+            <span class="history-xp">+<%= h.xp %> <%= t('common.xp') %></span>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

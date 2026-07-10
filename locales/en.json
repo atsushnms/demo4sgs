@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "htmlLang": "en"
+  },
+  "site": {
+    "name": "PromptQuest",
+    "tagline": "Play, learn, and master the art of prompting",
+    "description": "A gamified platform to sharpen your generative-AI prompting skills"
+  },
+  "nav": {
+    "home": "Home",
+    "quests": "Quests",
+    "ranking": "Ranking",
+    "mypage": "My Page",
+    "language": "Language"
+  },
+  "common": {
+    "level": "Level",
+    "xp": "XP",
+    "points": "Points",
+    "score": "Score",
+    "difficulty": "Difficulty",
+    "category": "Category",
+    "start": "Take on",
+    "back": "Back",
+    "submit": "Evaluate my prompt",
+    "loading": "The AI is evaluating…",
+    "yourPrompt": "Your prompt",
+    "close": "Close",
+    "badges": "Badges",
+    "rank": "Rank",
+    "player": "Player",
+    "you": "You",
+    "total": "Total"
+  },
+  "difficulty": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "home": {
+    "heroTitle": "Become a Prompt Master",
+    "heroSubtitle": "Clear quests to earn XP while the AI instantly grades your prompts. Level up your generative-AI skills the fun way.",
+    "heroCta": "Start a quest",
+    "howTitle": "How it works",
+    "step1Title": "Pick a quest",
+    "step1Body": "Take on real-world style challenges from beginner to advanced.",
+    "step2Title": "Write a prompt",
+    "step2Body": "Craft the best prompt to solve the challenge and submit it.",
+    "step3Title": "Instant AI grading",
+    "step3Body": "GitHub Models evaluates your prompt and suggests improvements.",
+    "step4Title": "Earn XP & badges",
+    "step4Body": "Gain XP based on your score, level up, and collect badges.",
+    "featuredQuests": "Featured quests"
+  },
+  "quests": {
+    "title": "All Quests",
+    "subtitle": "Choose a quest to take on.",
+    "goal": "Goal",
+    "maxScore": "Max score"
+  },
+  "quest": {
+    "scenario": "Scenario",
+    "goal": "Goal",
+    "tips": "Tips",
+    "promptPlaceholder": "Type the prompt you would use to solve this challenge…",
+    "resultTitle": "Evaluation result",
+    "feedback": "Feedback",
+    "strengths": "Strengths",
+    "improvements": "Improvements",
+    "earnedXp": "XP earned",
+    "tryAgain": "Try again",
+    "nextQuest": "Next quest",
+    "emptyPrompt": "Please enter a prompt.",
+    "evaluationError": "An error occurred during evaluation. Please try again later."
+  },
+  "ranking": {
+    "title": "Ranking",
+    "subtitle": "The top prompt masters. Climb your way up!",
+    "empty": "No records yet. Take on a quest and make your mark!"
+  },
+  "mypage": {
+    "title": "My Page",
+    "subtitle": "A record of your progress.",
+    "nextLevel": "To next level",
+    "completedQuests": "Quests cleared",
+    "noBadges": "No badges yet. Clear quests to earn them!",
+    "noHistory": "No attempts yet.",
+    "history": "Attempt history"
+  },
+  "badges": {
+    "first_quest": { "name": "First Step", "desc": "Cleared your first quest" },
+    "high_scorer": { "name": "High Scorer", "desc": "Scored 90 or above" },
+    "level_5": { "name": "Seasoned Prompter", "desc": "Reached level 5" },
+    "explorer": { "name": "Explorer", "desc": "Tried 3 different categories" }
+  },
+  "footer": {
+    "note": "This is a prototype. There is no user authentication.",
+    "poweredBy": "Powered by GitHub Models"
+  }
+}

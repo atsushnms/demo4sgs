@@ -1,0 +1,49 @@
+<%- include('partials/head', { pageTitle: undefined }) %>
+<%- include('partials/header') %>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="hero-tag"><%= t('site.tagline') %></p>
+      <h1 class="hero-title"><%= t('home.heroTitle') %></h1>
+      <p class="hero-sub"><%= t('home.heroSubtitle') %></p>
+      <a class="btn btn-primary btn-lg" href="/quests?lang=<%= locale %>"><%= t('home.heroCta') %> →</a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="hero-card">
+        <span class="hero-card-badge">AI</span>
+        <div class="hero-card-line w80"></div>
+        <div class="hero-card-line w60"></div>
+        <div class="hero-card-line w90"></div>
+        <div class="hero-card-score">92</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2 class="section-title"><%= t('home.howTitle') %></h2>
+    <div class="steps">
+      <% [1,2,3,4].forEach(function(n){ %>
+        <div class="step">
+          <div class="step-num"><%= n %></div>
+          <h3><%= t('home.step' + n + 'Title') %></h3>
+          <p><%= t('home.step' + n + 'Body') %></p>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2 class="section-title"><%= t('home.featuredQuests') %></h2>
+    <div class="card-grid">
+      <% featured.forEach(function(c){ %>
+        <%- include('partials/quest-card', { c: c }) %>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
